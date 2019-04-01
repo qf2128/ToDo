@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>TITLE</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="./styles/styles.css">
+  </head>
+  <body>
+
+    <!-- MOUNT POINT -->
+    <app></app>
+
+    <!-- TAGS -->
+    <script src="./tags/app.tag" type="riot/tag"></script>
+		<script src="./tags/todo-items.tag" type="riot/tag"></script>
+
+    <!-- LOAD JQuery, Bootstrap, Riot, Firebase -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/riot/3.13.2/riot+compiler.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/5.9.1/firebase.js"></script>
+
+    <script>
+      // INITIALIZE FIREBASE
+    var config = {
+      apiKey: "AIzaSyCI9pMd5sml1MpQ_dq1AYXxsE8n6am9S3E",
+      authDomain: "mstu5013-4fe0d.firebaseapp.com",
+      databaseURL: "https://mstu5013-4fe0d.firebaseio.com",
+      projectId: "mstu5013-4fe0d",
+      storageBucket: "mstu5013-4fe0d.appspot.com",
+      messagingSenderId: "730061309395"
+    };
+    firebase.initializeApp(config);
+
+			// Create firestore object (database ref)
+			let database = firebase.firestore();
+
+      // INITIALIZE RIOT
+      var tags = riot.mount('*', {
+				title: "My List"
+			});
+      let observer = riot.observable();
+    </script>
+
+  </body>
+</html>
